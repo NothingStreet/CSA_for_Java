@@ -20,7 +20,11 @@ Stresm流快速判断数组最大最小
 
 ## 第四次作业
 第一题数据库正常的DDL和DML
+
 第二题整数反转，用了字符串进行反转，并通过捕获异常来判断是否超出范围
+
 第三题爬楼梯用的动态规划递归，其余方法见：https://leetcode.cn/problems/climbing-stairs/solution/pa-lou-ti-by-leetcode-solution/
+
 第四题也类似于递归，主要方法是假设num数组为[1,2,3]
+
 首先，创建嵌套arraylist，并添加第一个元素空集：[ [] ]
