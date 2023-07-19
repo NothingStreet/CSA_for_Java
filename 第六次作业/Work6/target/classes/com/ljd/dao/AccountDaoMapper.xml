@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ljd.dao.AccountDao">
+
+    <resultMap id="AccountResultMap" type="com.ljd.domain.Account">
+        <result column="updatetime" property="updateTime"/>
+        <result column="createtime" property="createTime"/>
+    </resultMap>
+
+    <insert id="insert">
+        INSERT INTO account (id, name, money, createtime, updatetime)
+        SELECT #{id}, #{name}, #{money}, #{createTime}, #{updateTime}
+        WHERE NOT EXISTS (SELECT 1 FROM account WHERE id = #{id});
+
+    </insert>
+
+    <update id="updateByPrimaryKey">
+        update account
+        <set>
+            <if test="name!=null and id!='' ">
+                name=#{name},
+            </if>
+            <if test="money>0">
+                money=#{money},
+            </if>
+            <if test="createTime!=null">
+                createtime=#{createTime},
+            </if>
+            <if test="updateTime!=null">
+                updatetime=#{updateTime},
+            </if>
+        </set>
+        where id=#{id};
+    </update>
+
+    <delete id="deleteByPrimaryKey">
+        delete from account
+        where id=#{id}
+    </delete>
+
+    <select id="findAll" resultMap="AccountResultMap">
+        select * from account
+    </select>
+    <select id="selectByPrimaryKey" resultMap="AccountResultMap">
+        select *
+        from account
+        where id=#{id};
+    </select>
+
+
+</mapper>
