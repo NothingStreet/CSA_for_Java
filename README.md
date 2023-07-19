@@ -6,6 +6,7 @@
  * [大作业](#大作业)
  * [第四次作业](#第四次作业)
  * [第五次作业](#第五次作业)
+ * [第六次作业](#第六次作业)
 
 ## 第一次作业
 Stresm流快速判断数组最大最小
@@ -59,3 +60,11 @@ Stresm流快速判断数组最大最小
 5.处理查询集（如果第4步没有SELECT语句，直接跳至6）
 
 6.释放资源
+
+
+## 第六次作业
+mybatis帮助文档地址：https://mybatis.org/mybatis-3/zh/index.html
+#### mybatis连接步骤：
+1.配置pom.xml,导入mybatis，mysql，junit等
+2.配置mybatis-config.xml，主要包含数据库相关信息，以及mapper配置文件
+3.创建相关的mapper接口和mapper.xml文件，xml用来存储相关sql语句（注意，xml和接口的文件夹路径必须一致，但xml还是在resourcce文件夹中，接口在java文件夹中）
